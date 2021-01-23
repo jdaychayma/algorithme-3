@@ -1,0 +1,76 @@
+PROCEDURE dot_product (  var V1, V2 :  ARRAY_OF INTEGER; var ps : INTEGER ;)
+VAR
+    i : INTEGER ;
+    
+BEGIN
+    ps := 0 ;
+    i := 0 ;
+    IF (V1.length <> V2.length) THEN
+        write 
+        ps := NaN ;
+    END_IF
+    WHILE (i < V1.length) DO
+        ps += (V1[i]*V2[i]) ;
+        i+= 1 ;
+    END_WHILE
+END
+
+
+ALGORITHM orth-vector
+VAR
+    V1 , V2 :  ARRAY_OF INTEGER[2];
+    ps : INTEGER ;
+BEGIN
+    dot_product ( V1 , V2 , ps); //procedure //
+    IF (ps=0 ) THEN 
+    write ( "v1 and V2 are orthogonal") ;
+    ELSE
+        write (" v1 and V2 are not orthogonal ") ;
+    END_IF
+END
+
+
+
+
+
+
+
+
+
+
+
+FUNCTION dot-product(var V1 , V1 : ARRAY_OF INTEGER) : INTEGER
+VAR
+    ps := 0 ;
+    i := 0 ;
+BEGIN
+    IF (V1.length <> V2.length) THEN
+        write 
+        ps := NaN ;
+    END_IF
+    WHILE (i < V1.length) DO
+        ps += (V1[i]*V2[i]) ;
+        i+= 1 ;
+    END_WHILE
+    RETURN ps ;
+END
+
+
+
+
+
+
+ALGORITHM orth-vector
+VAR
+    V1 , V2 :  ARRAY_OF INTEGER[2];
+    ps : INTEGER ;
+BEGIN
+
+    ps := dot_product ( V1 , V2 , ps); // function //
+
+    IF (ps=0 ) THEN 
+    write ( "v1 and V2 are orthogonal") ;
+    ELSE
+        write (" v1 and V2 are not orthogonal ") ;
+    END_IF
+END
